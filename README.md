@@ -1,2 +1,2 @@
-# conference-map
-Map of all the conferences that I've spoken at
+# Conference Map
+Map of all the conferences that I've spoken at.

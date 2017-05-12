@@ -1,0 +1,32 @@
+---
+title: "Conference Map"
+author: "Matthew Renze"
+date: "May 12, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The following is an interactive map of the conferences that I have spoken at or am scheduled to speak at, as of May 12, 2017.
+
+To create this map, we'll use the following R code.
+``` {r, fig.width = 9.5, fig.height = 5.5, warning = FALSE}
+library(leaflet)
+
+setwd("C:/Work/School/Products/Projects/Project 2")
+
+conferences <- read.csv("Conferences.csv")
+
+map <- leaflet() %>%
+  addTiles() %>%
+  addMarkers(
+    lng = conferences$lon,
+    lat = conferences$lat,
+    popup = conferences$Location)
+
+map
+```
+
+Please click on a marker to see the name of the city of a conference that I've spoken at.
